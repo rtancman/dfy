@@ -1,4 +1,4 @@
-<center><img src="https://raw.githubusercontent.com/rtancman/dfy/master/workshop/dockerforyou/slides/images/dockerlogo.png" alt="docker" /></center>
+![Docker](https://raw.githubusercontent.com/rtancman/dfy/master/workshop/dockerforyou/slides/images/dockerlogo.png)
 # Docker e devs ;)
 
 

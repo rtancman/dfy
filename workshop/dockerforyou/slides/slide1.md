@@ -1,4 +1,4 @@
-<img src="http://www.gravatar.com/avatar/0115e99f9b12e4a630bcba1736967557.png" width="100px" alt="rtancman" />
+<center><img src="https://raw.githubusercontent.com/rtancman/dfy/master/workshop/dockerforyou/slides/images/dockerlogo.png" alt="docker" /></center>
 # Docker e devs ;)
 
 

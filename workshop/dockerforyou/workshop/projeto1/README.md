@@ -50,58 +50,58 @@ $ docker pull IMAGE
 
 #### Trabalhando com containers
 
-##### ps: Vai listar os containers que estão rodando.
+- ps: Vai listar os containers que estão rodando.
 ```bash
 $ docker ps
 ```
 
-##### ps -a: Vai listar todos os containers os estão rodando e os que estão parados.
+- ps -a: Vai listar todos os containers os estão rodando e os que estão parados.
 ```bash
 $ docker ps -a
 ```
 
-##### ps -a | grep Exit: Vai listar todos os containers que estão parados.
+- ps -a | grep Exit: Vai listar todos os containers que estão parados.
 ```bash
 $ docker ps -a | grep Exit
 ```
 
-##### run: Vai criar um container com base em uma imagem.
+- run: Vai criar um container com base em uma imagem.
 ```bash
 $ docker run IMAGEM
 ```
 
-##### stop: Vai parar o container. 
+- stop: Vai parar o container. 
 ```bash
 $ docker stop CONTAINER ID ou NAME
 ```
 
-##### start: Vai reiniciar um container que foi parado.
+- start: Vai reiniciar um container que foi parado.
 ```bash
 $ docker start CONTAINER ID ou NAME
 ```
 
-##### pause: Vai pausar um container.
+- pause: Vai pausar um container.
 ```bash
 $ docker pause CONTAINER ID ou NAME
 ```
 
-##### unpause: Vai continuar com a execucao de um container que foi pausado.
+- unpause: Vai continuar com a execucao de um container que foi pausado.
 ```bash
 $ docker unpause CONTAINER ID ou NAME
 ```
 
-##### kill: Vai matar um container.
+- kill: Vai matar um container.
 ```bash
 $ docker kill CONTAINER ID ou NAME
 ```
 
-- ##### rm: Vai remover um container.
+- rm: Vai remover um container.
 ```bash
 $ docker rm CONTAINER ID ou NAME
 ```
 
-- **Dica de um comando que é bem utilizado**
-##### Vai matar e remover todos os containers que estao rodando.
+**Dica de um comando que é bem utilizado**
+- Vai matar e remover todos os containers que estao rodando.
 ```bash
 $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
 ```

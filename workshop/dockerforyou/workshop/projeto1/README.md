@@ -95,12 +95,12 @@ $ docker unpause CONTAINER ID ou NAME
 $ docker kill CONTAINER ID ou NAME
 ```
 
-##### rm: Vai remover um container.
+- ##### rm: Vai remover um container.
 ```bash
 $ docker rm CONTAINER ID ou NAME
 ```
 
-**Dica de um comando que é bem utilizado**
+- **Dica de um comando que é bem utilizado**
 ##### Vai matar e remover todos os containers que estao rodando.
 ```bash
 $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )

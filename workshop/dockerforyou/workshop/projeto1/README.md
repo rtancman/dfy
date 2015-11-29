@@ -37,13 +37,13 @@ https://docs.docker.com/engine/installation/ubuntulinux/
 ```bash
 Vai listar as imagens que você tem disponível em sua maquina.
 
-$ docker images
+**$ docker images**
 ```
 
 ```bash
 Vai baixar uma imagem no docker hub. 
 
-$ docker pull IMAGE
+**$ docker pull IMAGE**
 ```
 **docker hub** é o "github" do docker, é um repositorio de imagens para o docker. Lá você pode encontrar ou disponibilizar imagens para o mundo ;)
 
@@ -52,13 +52,13 @@ $ docker pull IMAGE
 ```bash
 Vai listar os containers que estão rodando.
 
-$ docker ps
+**$ docker ps**
 ```
 
 ```bash
 Vai listar todos os containers os estão rodando e os que estão parados.
 
-$ docker ps -a
+**$ docker ps -a**
 ```
 
 ```bash

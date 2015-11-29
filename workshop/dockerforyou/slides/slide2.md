@@ -1,5 +1,6 @@
-![Docker](https://raw.githubusercontent.com/rtancman/dfy/master/workshop/dockerforyou/slides/images/dockerlogo.png)
-# Docker e devs ;)
+# Agenda
 
-Slide 2
-- https://www.docker.com/community/events 
+- Quem é o Docker? 
+- Uso Básico
+- Orquestração de containers
+- Mão na massa ;)

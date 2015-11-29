@@ -1,4 +1,5 @@
 # dfy - docker for you
+- https://www.docker.com/community/events 
 
 # Groups
 

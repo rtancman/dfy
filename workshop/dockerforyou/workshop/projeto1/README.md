@@ -20,8 +20,11 @@ $ bash main.sh -u SEU_USUARIO_LOCAL
 #### Meu SO é WIN, OSX ou outra distro
 
 - OSX e Win vamos usar o Docker Toolbox ( https://www.docker.com/docker-toolbox ):
-OSX -> https://docs.docker.com/mac/step_one/
-WIN -> https://docs.docker.com/windows/step_one/
+
+-- OSX -> https://docs.docker.com/mac/step_one/
+
+-- WIN -> https://docs.docker.com/windows/step_one/
 
 - Outra Distro
-https://docs.docker.com/engine/installation/ubuntulinux/
+
+-- https://docs.docker.com/engine/installation/ubuntulinux/

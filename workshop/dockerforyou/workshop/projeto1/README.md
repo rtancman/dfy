@@ -35,85 +35,85 @@ https://docs.docker.com/engine/installation/ubuntulinux/
 
 #### Trabalhando com imagens
 ```bash
-$ docker images
-```
 Vai listar as imagens que você tem disponível em sua maquina.
 
-```bash
-$ docker pull IMAGE
+$ docker images
 ```
+
+```bash
 Vai baixar uma imagem no docker hub. 
 
+$ docker pull IMAGE
+```
 **docker hub** é o "github" do docker, é um repositorio de imagens para o docker. Lá você pode encontrar ou disponibilizar imagens para o mundo ;)
 
 
 #### Trabalhando com containers
 ```bash
-$ docker ps
-```
 Vai listar os containers que estão rodando.
 
+$ docker ps
+```
 
 ```bash
-$ docker ps -a
-```
 Vai listar todos os containers os estão rodando e os que estão parados.
 
+$ docker ps -a
+```
 
 ```bash
-$ docker ps -a | grep Exit
-```
 Vai listar todos os containers que estão parados.
 
+$ docker ps -a | grep Exit
+```
 
 ```bash
-$ docker run IMAGEM
-```
 Vai criar um container com base em uma imagem.
 
+$ docker run IMAGEM
+```
 
 ```bash
-$ docker stop CONTAINER ID ou NAME
-```
 Vai parar o container. 
 
+$ docker stop CONTAINER ID ou NAME
+```
 
 ```bash
-$ docker start CONTAINER ID ou NAME
-```
 Vai reiniciar um container que foi parado.
 
+$ docker start CONTAINER ID ou NAME
+```
 
 ```bash
-$ docker pause CONTAINER ID ou NAME
-```
 Vai pausar um container.
 
+$ docker pause CONTAINER ID ou NAME
+```
 
 ```bash
-$ docker unpause CONTAINER ID ou NAME
-```
 Vai continuar com a execucao de um container que foi pausado.
 
+$ docker unpause CONTAINER ID ou NAME
+```
 
 ```bash
-$ docker kill CONTAINER ID ou NAME
-```
 Vai matar um container.
 
+$ docker kill CONTAINER ID ou NAME
+```
 
 ```bash
-$ docker rm CONTAINER ID ou NAME
-```
 Vai remover um container.
 
+$ docker rm CONTAINER ID ou NAME
+```
 
 **Dica de um comando que é bem utilizado**
 ```bash
-$ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
-```
 Vai matar e remover todos os containers que estao rodando.
 
-
+$ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
+```
 
 #### Vamos começar a rodar docker a VERAAAAA!!!!

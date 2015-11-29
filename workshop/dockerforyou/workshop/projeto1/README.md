@@ -1,18 +1,21 @@
 # Projeto 1: Treinamento de docker + docker-compose
+
 Vamos construir uma ambiente com docker e evoluir em seguida utilizando o docker-compose
 
-# 1) Instalando o docker em sua maquina ;)
+### Instalando o docker em sua maquina ;)
+
 Para começar toda nossa jornada precisamos instalar o docker e o docker-compose na sua maquina. Para isso vamos seguir os seguintes passos:
 
 - Meu SO é Fedora22, Debian ou Debian likes
 -- Baixar o projeto dotfiles https://github.com/rtancman/dotfiles/tree/docker
 -- Em seguida abrir o terminal, navegar ate o diretorio do projeto dotfiles e rodar o comando abaixo
-```Shell Script
+
+```bash
 $ sudo su -
 $ bash main.sh -u SEU_USUARIO_LOCAL
-
 ```
-*OBS: Substituir este valor SEU_USUARIO_LOCAL para o seu usuário*
+
+**OBS: Substituir este valor SEU_USUARIO_LOCAL para o seu usuário**
 
 - Meu SO é WIN, OSX ou outra distro
 

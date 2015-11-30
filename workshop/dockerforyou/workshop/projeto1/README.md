@@ -108,15 +108,15 @@ $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
 
 #### Vamos começar a rodar docker a VERAAAAA!!!!
 1. Primeiro vamos baixar a imagem do Debian SO base que vamos utilizar nos nossos containers.
-```bash
-$ docker pull debian
-```
-**OBS:** Isso não é magia, lembra que agente falou do docker hub? Então essa imagem do Debian esta hospedada lá. Basta acessar https://hub.docker.com/ e buscar ;)
+   * ```bash
+   * $ docker pull debian
+   * ```
+   * **OBS:** Isso não é magia, lembra que agente falou do docker hub? Então essa imagem do Debian esta hospedada lá. Basta acessar https://hub.docker.com/ e buscar ;)
 
 2. Após baixar as imagem, vamos verificar se ela esta disponível para criar o nosso primeiro container
-```bash
-$ docker images
-```
+   * ```bash
+   * $ docker images
+   * ```
 
 3. Agora vamos criar o nosso primeiro container
 ```bash

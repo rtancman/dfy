@@ -155,11 +155,13 @@ $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
 ## 4) Vamos fazer este exemplo agora utilizando o docker-compose
 O docker-compose ( https://github.com/docker/compose ) é uma ferramenta para facilitar os comandos do docker.
 
-Ela foi baseada no projeto fig ( http://www.fig.sh/ ) este artigo ( http://blog.docker.com/2015/02/orchestrating-docker-with-machine-swarm-and-compose/ ) fala um pouco sobre as ferramentas que temos no docker e explica de onde veio o docker-compose 
+É muito utilizada e facilita o gerenciamento de multi containers.
 
-Nela utilizamos um arquivo yml para o comando e que vai levantar um container. 
+Nela utilizamos um arquivo yml vai descrever como levantar um container. 
 
-É uma ferramenta muito utilizada e facilita muito o gerenciamento de mult-conainers.
+Foi baseada no projeto fig ( http://www.fig.sh/ ) 
+
+Artigo ( http://blog.docker.com/2015/02/orchestrating-docker-with-machine-swarm-and-compose/ ) fala um pouco sobre as ferramentas que temos no docker e explica de onde veio o docker-compose 
 
 1. Vamos montar o yml para o nosso container memcached:
    ```yml

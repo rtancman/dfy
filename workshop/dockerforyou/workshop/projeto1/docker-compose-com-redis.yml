@@ -1,0 +1,4 @@
+meumemcached:
+  image: memcached
+meuredis:
+  image: redis

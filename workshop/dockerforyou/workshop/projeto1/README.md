@@ -151,3 +151,58 @@ $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
    $ docker kill meumemcached
    $ docker rm meumemcached
    ```
+
+#### Vamos fazer este exemplo agora utilizando o docker-compose
+O docker-compose ( https://github.com/docker/compose ) é uma ferramenta para facilitar os comandos do docker.
+
+Ela foi baseada no projeto fig ( http://www.fig.sh/ ) este artigo ( http://blog.docker.com/2015/02/orchestrating-docker-with-machine-swarm-and-compose/ ) fala um pouco sobre as ferramentas que temos no docker e explica de onde veio o docker-compose 
+
+Nela utilizamos um arquivo yml para o comando e que vai levantar um container. 
+
+É uma ferramenta muito utilizada e facilita muito o gerenciamento de mult-conainers.
+
+1. Vamos montar o yml para o nosso container memcached:
+   ```yml
+   meumemcached:
+     image:  memcached
+   ```
+   Vamos salvar em um arquivo chamado docker-compose.yml
+
+2. Agora vamos rodar o docker-compose:
+   ```bash
+   $ docker-compose up -d
+   ```
+
+3. Vamos verificar se o container de memcached esta rodando:
+   ```bash
+   $ docker ps
+   ```
+
+4. Vamos matar esse container utilizando o docker-compose:
+   ```bash
+   $ docker-compose kill
+   ```
+
+5. Vamos remover esse container utilizando o docker-compose:
+   ```bash
+   $ docker-compose rm
+   ```
+
+6. Vamos agora criar outro arquivo com mais um servico utilizando o docker-compose:
+   ```yml
+   meumemcached:
+     image: memcached
+   meuredis:
+     image: redis
+   ```
+   Vamos salvar em um arquivo chamado docker-compose-com-redis.yml
+
+7. Agora vamos rodar o docker-compose novamente com o parametro -f:
+   ```bash
+   $ docker-compose -f docker-compose-com-redis.yml up -d
+   ```
+   Neste caso se você não tiver a imagem do redis ele também ira baixar.
+
+   O parametro **-f** é utilizado para dizer ao docker-compose que o yml a ser rodado não segue o nome docker-compose.yml
+
+   Por este motivo precisamos sempre passar o nome do novo arquivo no caso docker-compose-com-redis.yml

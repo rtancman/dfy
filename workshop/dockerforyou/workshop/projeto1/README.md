@@ -114,42 +114,40 @@ $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
    **OBS:** Isso não é magia, lembra que agente falou do docker hub? Então essa imagem do Debian esta hospedada lá. Basta acessar https://hub.docker.com/ e buscar ;)
 
 2. Após baixar as imagem, vamos verificar se ela esta disponível para criar o nosso primeiro container
-   * ```bash
-   * $ docker images
-   * ```
+    ```bash
+    $ docker images
+    ```
 
 3. Agora vamos criar o nosso primeiro container
-```bash
-$ docker run --name="meuprimeirocontainer" debian
-
-```
-**OBS:** Este comando vai criar o container mais ele vai parar porque não existe nenhum serviço rodando. É ae que começa a cair a ficha, "o docker é um framework para criar SaaS" 
+   ```bash
+   $ docker run --name="meuprimeirocontainer" debian
+   ```
+   **OBS:** Este comando vai criar o container mais ele vai parar porque não existe nenhum serviço rodando. É ae que começa a cair a ficha, "o docker é um framework para criar SaaS" 
 
 4. Agora vamos criar um novo container
-```bash
-$ docker run -d --name="meumemcached" memcached
-```
-**OBS:** Caso você não tenha essa imagem o comando **docker run** ira baixar como o comando **docker pull** 
+   ```bash
+   $ docker run -d --name="meumemcached" memcached
+   ```
+   **OBS:** Caso você não tenha essa imagem o comando **docker run** ira baixar como o comando **docker pull** 
 
-Com -d vamos rodar esse container em background.
+   Com -d vamos rodar esse container em background.
 
 5. Agora vamos ver se o nosso container esta rodando normalmente
-```bash
-$ docker ps
-
-```
+   ```bash
+   $ docker ps
+   
+   ```
 
 6. Agora que temos um container rodando podemos fazer os testes rodando os comandos pause, unpause, stop e start
-```bash
-$ docker pause meumemcached
-$ docker unpause meumemcached
-$ docker stop meumemcached
-$ docker start meumemcached
-
-```
+   ```bash
+   $ docker pause meumemcached
+   $ docker unpause meumemcached
+   $ docker stop meumemcached
+   $ docker start meumemcached
+   ```
 
 7. Vamos matar e remover este container recem criado 
-```bash
-$ docker kill meumemcached
-$ docker rm meumemcached
-```
+   ```bash
+   $ docker kill meumemcached
+   $ docker rm meumemcached
+   ```

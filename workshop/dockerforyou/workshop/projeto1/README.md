@@ -30,7 +30,7 @@ WIN -> https://docs.docker.com/windows/step_one/
 https://docs.docker.com/engine/installation/ubuntulinux/
 
 
-## 2) Vamos rodar os comandos mais usandos
+## 2) Vamos rodar os comandos mais usados
 **OBS: Vamos entender melhor assim que criarmos o primeiro container de teste**
 
 #### Trabalhando com imagens
@@ -106,7 +106,7 @@ $ docker rm CONTAINER ID ou NAME
 $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
 ```
 
-#### Vamos começar a rodar docker a VERAAAAA!!!!
+## 3) Vamos começar a rodar docker a VERAAAAA!!!!
 1. Primeiro vamos baixar a imagem do Debian SO base que vamos utilizar nos nossos containers.
    ```bash
    $ docker pull debian
@@ -152,7 +152,7 @@ $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
    $ docker rm meumemcached
    ```
 
-#### Vamos fazer este exemplo agora utilizando o docker-compose
+## 4) Vamos fazer este exemplo agora utilizando o docker-compose
 O docker-compose ( https://github.com/docker/compose ) é uma ferramenta para facilitar os comandos do docker.
 
 Ela foi baseada no projeto fig ( http://www.fig.sh/ ) este artigo ( http://blog.docker.com/2015/02/orchestrating-docker-with-machine-swarm-and-compose/ ) fala um pouco sobre as ferramentas que temos no docker e explica de onde veio o docker-compose 
@@ -206,3 +206,14 @@ Nela utilizamos um arquivo yml para o comando e que vai levantar um container.
    O parametro **-f** é utilizado para dizer ao docker-compose que o yml a ser rodado não segue o nome docker-compose.yml
 
    Por este motivo precisamos sempre passar o nome do novo arquivo no caso docker-compose-com-redis.yml
+
+
+## 5) Uhulll terminamos o projeto 1
+Se você chegou até aqui primeiramente...
+
+#### PARABÉNS!!!!
+
+Já podemos dizer que você tem o poder do Docker em suas mãos!
+
+Vamos continuar? Toca para o projeto 2!
+[Clique aqui para ver o Projeto 2](https://github.com/rtancman/dfy/tree/master/workshop/dockerforyou/workshop/projeto2)

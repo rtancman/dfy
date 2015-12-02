@@ -43,3 +43,66 @@ Vamos montar um ambiente com docker utilizando NGINX, PHP 6 + PHPFPM e MariaDB. 
    ```bash
    $ docker pull php:5.6-fpm
    ```
+
+## 2) Vamos montar o nosso docker-compose
+
+1. Iniciando o arquivo yml com a nossa imagem do nginx
+
+   ```yml
+   
+   meunginx:
+     image: nginx
+     ports:
+      - "80:80"
+
+   ```
+
+   ports: E utilizado para mapear a porta da maquina host com o container q vai rodar. Ou seja, tudo que bater na porta 80 do seu pc vai direcionar para o container recem gerado no docker.
+
+2. Adicionando o mariadb 
+
+   ```yml
+    meunginx:
+      image: nginx
+      links:
+        - meumariadb
+      ports:
+        - "80:80"
+    meumariadb:
+      image: mariadb
+      environment:
+        - MYSQL_ROOT_PASSWORD=1234
+   ```
+
+   environment: E utilizado para setar variaveis de ambiente (env vars) no container ;) 
+
+3. Vamos fazer um teste e rodar o que ja temos e verificar se os containers estao rodando 
+
+   ```bash
+   $ docker-compose up -d
+   ```
+
+   ```bash
+   $ docker ps
+   ```
+
+   Tudo certo! Vamos continuar...
+
+4. php6-fpm 
+
+   ```yml
+    meunginx:
+      image: nginx
+      links:
+        - meumariadb
+      ports:
+        - "80:80"
+    meumariadb:
+      image: mariadb
+      environment:
+        - MYSQL_ROOT_PASSWORD=1234
+    meuphp6fpm:
+      image: php:5.6-fpm
+      ports:
+        - "9000:9000"
+   ```

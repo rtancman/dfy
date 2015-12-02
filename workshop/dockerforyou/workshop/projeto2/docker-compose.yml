@@ -1,0 +1,14 @@
+meunginx:
+  image: nginx
+  links:
+    - meumariadb
+  ports:
+    - "80:80"
+meumariadb:
+  image: mariadb
+  environment:
+    - MYSQL_ROOT_PASSWORD=1234
+meuphp6fpm:
+  image: php:5.6-fpm
+  ports:
+    - "9000:9000"

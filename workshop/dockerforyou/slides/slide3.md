@@ -1,4 +1,4 @@
-# Quem é o Docker?
+# Agenda
 
-Docker é um projeto de open-source que automatiza o deploy de aplicativos dentro de containers.
-
+1.  Quem é o Docker? 
+2.  Mão na massa

@@ -106,3 +106,18 @@ Vamos montar um ambiente com docker utilizando NGINX, PHP 6 + PHPFPM e MariaDB. 
       ports:
         - "9000:9000"
    ```
+
+5. Vamos testar mais uma vez e verificar se os containers estao rodando 
+
+   ```bash
+   $ docker-compose up -d
+   ```
+
+   ```bash
+   $ docker ps
+   ```
+
+   Esta td certo \o/ Vamos baixar o WordPress
+
+
+## 2) Rodando o WordPress

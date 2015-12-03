@@ -44,7 +44,22 @@ Vamos montar um ambiente com docker utilizando NGINX, PHP 6 + PHPFPM e MariaDB. 
    $ docker pull php:5.6-fpm
    ```
 
-## 2) Vamos montar o nosso docker-compose
+## 2) Criando a nossa img para o rodar o blog
+
+1. Vamos gerar
+
+   ```bash
+   $ docker-compose up -d
+   ```
+
+   ```bash
+   $ docker ps
+   ```
+
+   Esta td certo \o/ Vamos baixar o WordPress
+docker build -t blogmaneiro-php6fpm .
+
+## 3) Vamos montar o nosso docker-compose
 
 1. Iniciando o arquivo yml com a nossa imagem do nginx
 
@@ -118,6 +133,3 @@ Vamos montar um ambiente com docker utilizando NGINX, PHP 6 + PHPFPM e MariaDB. 
    ```
 
    Esta td certo \o/ Vamos baixar o WordPress
-
-
-## 2) Rodando o WordPress

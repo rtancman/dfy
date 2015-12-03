@@ -34,15 +34,12 @@ https://docs.docker.com/engine/installation/ubuntulinux/
 **OBS: Vamos entender melhor assim que criarmos o primeiro container de teste**
 
 #### Trabalhando com imagens
+- Vai listar as imagens que você tem disponível em sua maquina.
 ```bash
-Vai listar as imagens que você tem disponível em sua maquina.
-
 $ docker images
 ```
-
+- Vai baixar uma imagem no docker hub.
 ```bash
-Vai baixar uma imagem no docker hub. 
-
 $ docker pull IMAGE
 ```
 **docker hub** é o "github" do docker, é um repositorio de imagens para o docker. Lá você pode encontrar ou disponibilizar imagens para o mundo ;)
@@ -135,10 +132,21 @@ $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
 5. Agora vamos ver se o nosso container esta rodando normalmente
    ```bash
    $ docker ps
-   
    ```
 
-6. Agora que temos um container rodando podemos fazer os testes rodando os comandos pause, unpause, stop e start
+6. Agora vamos rodar comandos
+   ```bash
+   $ docker exec -it meumemcached ls
+
+   $ docker exec -it meumemcached bash
+   ```
+
+7. Agora vamos descobrir o ip do nosso container
+   ```bash
+   docker inspect --format '{{ .NetworkSettings.IPAddress }}' meumemcached
+   ```
+
+8. Agora que temos um container rodando podemos fazer os testes rodando os comandos pause, unpause, stop e start
    ```bash
    $ docker pause meumemcached
    $ docker unpause meumemcached
@@ -146,7 +154,7 @@ $ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
    $ docker start meumemcached
    ```
 
-7. Vamos matar e remover este container recem criado 
+9. Vamos matar e remover este container recem criado 
    ```bash
    $ docker kill meumemcached
    $ docker rm meumemcached
@@ -209,8 +217,74 @@ Artigo ( http://blog.docker.com/2015/02/orchestrating-docker-with-machine-swarm-
 
    Por este motivo precisamos sempre passar o nome do novo arquivo no caso docker-compose-com-redis.yml
 
+## 5) Dockerfile http://docs.docker.com/engine/reference/builder/
 
-## 5) Uhulll terminamos o projeto 1
+Vamos criar um Dockerfile que vai ser baseado no debian rodando o flask 
+
+1. Vamos criar o nosso
+   ```Dockerfile
+   FROM debian
+   ```
+   FROM representa em qual container vamos nos basear para continuar construindo a nossa imagem.
+
+2. Instalando o python
+   ```Dockerfile
+   FROM debian
+   RUN apt-get update
+   RUN apt-get install python2.7 python-pip -y
+   ```
+   RUN vai executar o qualquer comando para construir a nossa imagem com as nossas dependencias, nesse caso vai instalar o python
+
+3. Instalando o pip e o flask
+   ```Dockerfile
+   FROM debian
+   RUN apt-get update
+   RUN apt-get install python2.7 python-pip -y
+   RUN mkdir app
+   RUN pip install gunicorn
+   RUN pip install flask
+   ADD app.py /app/
+   WORKDIR /app/
+   ```
+   ADD vai adicionar algum arquivo ou diretorio na imagem
+   WORKDIR vai apontar o diretorio padrao a ser chamado quando vc for criar um container
+
+4. Rodando o flask
+   ```Dockerfile
+   FROM debian
+   RUN apt-get update
+   RUN apt-get install python2.7 python-pip -y
+   RUN mkdir app
+   RUN pip install gunicorn
+   RUN pip install flask
+   ADD app.py /app/
+   WORKDIR /app/
+   EXPOSE 8000
+   CMD ["python2.7","app.py"]
+   ```
+   EXPOSE vai expor a porta 8000 do container
+
+   CMD vai executar um comando assim que o container for criado
+
+
+5. Vamos buildar uma nova imagem e criar o nosso container
+   ```bash
+   $ docker build -t minhaprimeiraimagem .
+   $ docker run -p 5000:5000 -d --name meunovocontainer minhaprimeiraimagem
+   $ docker ps
+   ```
+   -p -> vai apontar a porta 8000 do host para 800 do container
+   --name -> da o nome ao container
+
+6. Vamos mapear um volume agora
+   ```bash
+   $ docker rm -f meunovocontainer
+   $ docker run -p 5000:5000 -v `pwd`/app.py:/app/app.py -d --name meunovocontainer minhaprimeiraimagem
+   $ docker ps
+   ```
+   -v -> vai mapear o seu app.py da maquina host com o que esta no container /app/app.py
+
+## 6) Uhulll terminamos o projeto 1
 Se você chegou até aqui primeiramente...
 
 #### PARABÉNS!!!!

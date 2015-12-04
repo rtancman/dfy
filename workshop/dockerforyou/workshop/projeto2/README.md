@@ -24,14 +24,14 @@ Vamos montar um ambiente com docker utilizando NGINX, PHP 6 + PHPFPM e MariaDB. 
    $ docker pull nginx
    ```
 
-3. MariaDB...
+3. MySQL...
 
-   No docker hub temos https://hub.docker.com/_/mariadb/
+   No docker hub temos https://hub.docker.com/_/mysql/
 
    Vamos baixar \o/
    
    ```bash
-   $ docker pull mariadb
+   $ docker pull mysql
    ```
 
 4. E por fim o php6 + fpm ...
@@ -64,12 +64,10 @@ Vamos montar um ambiente com docker utilizando NGINX, PHP 6 + PHPFPM e MariaDB. 
    ```yml
     meunginx:
       image: nginx
-      links:
-        - meumariadb
       ports:
         - "80:80"
-    meumariadb:
-      image: mariadb
+    meumysql:
+      image: mysql
       environment:
         - MYSQL_ROOT_PASSWORD=1234
    ```
@@ -93,12 +91,10 @@ Vamos montar um ambiente com docker utilizando NGINX, PHP 6 + PHPFPM e MariaDB. 
    ```yml
     meunginx:
       image: nginx
-      links:
-        - meumariadb
       ports:
         - "80:80"
-    meumariadb:
-      image: mariadb
+    meumysql:
+      image: mysql
       environment:
         - MYSQL_ROOT_PASSWORD=1234
     meuphp6fpm:
@@ -251,28 +247,34 @@ Nossa estrutura de pastas ira ficar assim:
       meunginx:
         image: nginx
         links:
-          - meumariadb
           - meuphp6fpm
+          - meumysql
         ports:
           - "80:80"
         extra_hosts:
           - "dev.blogmaneiro.com.br:127.0.0.1"
         volumes:
-          # - ../dev:/var/www/html
+          - ./app/wordpress:/var/www/html/wordpress
           - ./nginx/app.conf:/etc/nginx/conf.d/default.conf
           - ./nginx/logs:/var/log/nginx
           - ./nginx/ssl:/etc/nginx/ssl    
-      meumariadb:
-        image: mariadb
+      meumysql:
+        image: mysql
         environment:
           - MYSQL_ROOT_PASSWORD=1234
+          - MYSQL_DATABASE=wordpress
+          - MYSQL_USER=wordpress
+          - MYSQL_PASSWORD=q1w2e3r4
       meuphp6fpm:
         image: php56-wordpress
         links:
-          - meumariadb
+          - meumysql
         ports:
           - "9000:9000"
+        environment:
+          - MYSQL_DATABASE_WP=wordpress
         volumes:
+          - ./app/wordpress:/var/www/html/wordpress
           - ./app/wp-config.php:/var/www/html/wordpress/wp-config.php
           - ./app/log:/var/log
           - ./entrypoint:/usr/local/bin/entrypoint

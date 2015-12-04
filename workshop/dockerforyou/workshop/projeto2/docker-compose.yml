@@ -2,6 +2,7 @@ meunginx:
   image: nginx
   links:
     - meumariadb
+    - meuphp6fpm
   ports:
     - "80:80"
 meumariadb:
@@ -10,5 +11,7 @@ meumariadb:
     - MYSQL_ROOT_PASSWORD=1234
 meuphp6fpm:
   image: php:5.6-fpm
+  links:
+    - meumariadb
   ports:
     - "9000:9000"

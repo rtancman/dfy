@@ -45,7 +45,7 @@ OSX e Win vamos usar o Docker Toolbox ( https://www.docker.com/docker-toolbox ):
 
 - Outra Distro
 
-https://docs.docker.com/engine/installation/ubuntulinux/
+   https://docs.docker.com/engine/installation/ubuntulinux/
 
 
 ## 2) Vamos rodar os comandos mais usados
@@ -184,6 +184,14 @@ $ docker ps -qaf "status=exited" | xargs docker rm -f
    $ docker kill meumemcached
    $ docker rm meumemcached
    ```
+
+10. Extra exportando e importando imagens 
+   ```bash
+   $ docker export meumemcached > meumemcached.tar
+   $ docker import meumemcached.tar meumemcached
+   ```
+   Este comando e util para disponibilizar a img que esta na sua maquina para outra pessoa
+   
 
 ## 4) Vamos fazer este exemplo agora utilizando o docker-compose
 O docker-compose ( https://github.com/docker/compose ) é uma ferramenta para facilitar os comandos do docker.

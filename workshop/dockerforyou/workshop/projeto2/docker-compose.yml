@@ -5,13 +5,26 @@ meunginx:
     - meuphp6fpm
   ports:
     - "80:80"
+  extra_hosts:
+    - "dev.blogmaneiro.com.br:127.0.0.1"
+  volumes:
+    # - ../dev:/var/www/html
+    - ./nginx/app.conf:/etc/nginx/conf.d/default.conf
+    - ./nginx/logs:/var/log/nginx
+    - ./nginx/ssl:/etc/nginx/ssl    
 meumariadb:
   image: mariadb
   environment:
     - MYSQL_ROOT_PASSWORD=1234
 meuphp6fpm:
-  image: php:5.6-fpm
+  # image: php:5.6-fpm
+  image: php56-wordpress
   links:
     - meumariadb
   ports:
     - "9000:9000"
+  volumes:
+    # - ./app/wp-config.php:/var/www/html/wordpress/wp-config.php
+    - ./app/log:/var/log
+    - ./entrypoint:/usr/local/bin/entrypoint
+  entrypoint: /usr/local/bin/entrypoint

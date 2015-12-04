@@ -246,4 +246,63 @@ Nossa estrutura de pastas ira ficar assim:
    Após o build e criação do container, vamos ver se o wp esta nosso container usando o comando docker exec
 
 
+6. Vamos modificar o nosso docker-compose
+    ```yml
+      meunginx:
+        image: nginx
+        links:
+          - meumariadb
+          - meuphp6fpm
+        ports:
+          - "80:80"
+        extra_hosts:
+          - "dev.blogmaneiro.com.br:127.0.0.1"
+        volumes:
+          # - ../dev:/var/www/html
+          - ./nginx/app.conf:/etc/nginx/conf.d/default.conf
+          - ./nginx/logs:/var/log/nginx
+          - ./nginx/ssl:/etc/nginx/ssl    
+      meumariadb:
+        image: mariadb
+        environment:
+          - MYSQL_ROOT_PASSWORD=1234
+      meuphp6fpm:
+        image: php56-wordpress
+        links:
+          - meumariadb
+        ports:
+          - "9000:9000"
+        volumes:
+          - ./app/wp-config.php:/var/www/html/wordpress/wp-config.php
+          - ./app/log:/var/log
+          - ./entrypoint:/usr/local/bin/entrypoint
+        entrypoint: /usr/local/bin/entrypoint
+   ```
+   environment -> seta uma variavel de ambiente no docker
+
+   extra_hosts -> inclui um host no container ( /etc/hosts )
+
+   links -> como o nome ja diz fecha um link ( rede interna ) entre 2 ou mais containers
+   
+   entrypoint -> vai executar um comando após a criação do container. É uma boa prática usar entrypoint
+
+
+7. run docker-compose
+    ```bash
+    $ docker-compose up -d
+    Creating projeto2_meumariadb_1...
+    Creating projeto2_meuphp6fpm_1...
+    Cannot start container a324efed1346c3be5686e4da8ab22956a0f9a80cbac5fe4ad9040ba331d4af77: [8] System error: exec: "/usr/local/bin/entrypoint": permission denied
+    ```
+
+    Vamos ter esse erro pq o arquivo entrypoint da nossa maquina host esta sem permissao de leitura
+
+    ```bash
+    chmod +x entrypoint
+    $ docker-compose up -d
+    ```
+
+    Agora acesse no seu navegador http://0.0.0.0
+
+    Provavelmente vamos ter algum problema de banco. Precisamos setar as configurções corretas no wp-config.php
 

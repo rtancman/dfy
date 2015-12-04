@@ -1,0 +1,4 @@
+172.17.42.1 - - [04/Dec/2015:12:00:10 +0000] "GET / HTTP/1.1" 500 262 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0" "-"
+172.17.42.1 - - [04/Dec/2015:12:00:10 +0000] "GET /favicon.ico HTTP/1.1" 200 0 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0" "-"
+172.17.42.1 - - [04/Dec/2015:12:00:23 +0000] "GET /install.php HTTP/1.1" 404 27 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0" "-"
+172.17.42.1 - - [04/Dec/2015:12:00:31 +0000] "GET / HTTP/1.1" 500 262 "-" "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0" "-"

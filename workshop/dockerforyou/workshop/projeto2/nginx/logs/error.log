@@ -1,0 +1,1 @@
+2015/12/04 12:00:23 [error] 6#6: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.17.42.1, server: dev.blogmaneiro.com.br, request: "GET /install.php HTTP/1.1", upstream: "fastcgi://172.17.0.172:9000", host: "0.0.0.0"

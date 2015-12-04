@@ -98,10 +98,17 @@ $ docker rm CONTAINER ID ou NAME
 ```
 
 **Dica de um comando que é bem utilizado**
-- Vai matar e remover todos os containers que estao rodando.
+- Vai matar e remover todos os containers que estão rodando.
 ```bash
-$ docker kill $(docker ps -a -q ) && docker rm $(docker ps -a -q )
+$ docker ps -qa | xargs docker rm -f
 ```
+
+Dica de outro comando que tambem é bem utilizado**
+- Vai remover todos os containers que estão parados.
+```bash
+$ docker ps -qaf "status=exited" | xargs docker rm -f
+```
+
 
 ## 3) Vamos começar a rodar docker a VERAAAAA!!!!
 1. Primeiro vamos baixar a imagem do Debian SO base que vamos utilizar nos nossos containers.

@@ -12,6 +12,8 @@ Resultado: No final teremos o WP rodando para empresa.
 
 [Clique aqui para ver o Projeto 2](https://github.com/rtancman/dfy/tree/master/workshop/dockerforyou/workshop/projeto2)
 
+<!-- -
+
 # Mais exercícios que ainda vamos desenvolver os passos para vc praticar
 
 ### Projeto 3: O portal PythonPraVida quer uma solução para o CMS da empresa.
@@ -29,3 +31,4 @@ Ex:
 [Clique aqui para ver o Projeto 4](https://github.com/rtancman/dfy/tree/master/workshop/dockerforyou/workshop/projeto4)
 
 
+->

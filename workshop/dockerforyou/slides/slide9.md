@@ -1,3 +1,4 @@
 # 2. Mão na massa
 
-https://github.com/rtancman/dfy/tree/master/workshop/dockerforyou/workshop
+
+[Clique para acessar o workshop](https://github.com/rtancman/dfy/tree/master/workshop/dockerforyou/workshop)

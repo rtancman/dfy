@@ -1,5 +1,5 @@
 # Docker for you workshop para o dia 04/12/2015
-Teremos 4 projetos sendo eles:
+Teremos 2 projetos sendo eles:
 
 ### Projeto 1: Treinamento de docker + docker-compose
 Vamos construir uma ambiente com docker e evoluir em seguida utilizando o docker-compose

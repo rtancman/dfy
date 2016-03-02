@@ -325,4 +325,4 @@ Se você chegou até aqui primeiramente...
 Já podemos dizer que você tem o poder do Docker em suas mãos!
 
 Vamos continuar? Toca para o projeto 2!
-[Clique aqui para ver o Projeto 2](https://github.com/rtancman/dfy/tree/master/workshop/dockerforyou/workshop/projeto2)
+[Clique aqui para ver o Projeto 2](https://github.com/rtancman/dfy/tree/master/workshop/pt-BR/dockerforyou/workshop/projeto2)

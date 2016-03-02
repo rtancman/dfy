@@ -4,13 +4,13 @@ Vamos trabalhar baby steps para atingir o resultado de cada projeto onde você v
 
 # Workshop
 - Docker for you 04/12/2015 na M4U
--- pr-BR [ dockerforyou ](https://github.com/rtancman/dfy/tree/master/workshop/pt-BR/dockerforyou/workshop)
+ - pr-BR [ dockerforyou ](https://github.com/rtancman/dfy/tree/master/workshop/pt-BR/dockerforyou/workshop)
 
 - python 
--- pr-BR [ projetos utilizando docker + python ](https://github.com/rtancman/dfy/tree/master/workshop/pt-BR/python)
+ - pr-BR [ projetos utilizando docker + python ](https://github.com/rtancman/dfy/tree/master/workshop/pt-BR/python)
 
 - proxy  
--- pr-BR [ projetos utilizando docker + proxy ](https://github.com/rtancman/dfy/tree/master/workshop/pt-BR/proxy)
+ - pr-BR [ projetos utilizando docker + proxy ](https://github.com/rtancman/dfy/tree/master/workshop/pt-BR/proxy)
 
 # Events
 - https://www.docker.com/community/events 

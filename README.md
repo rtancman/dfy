@@ -1,6 +1,6 @@
 # dfy - docker for you
-### Repositorio criado para destrinchar a utilização de docker com as tecnologias atuais. 
-### Vamos trabalhar baby steps para atingir o resultado de cada projeto onde você vai poder seguir um tutorial e no final dele gerar uma aplicação rodando no docker ;)
+Repositorio criado para destrinchar a utilização de docker com as tecnologias atuais. 
+Vamos trabalhar baby steps para atingir o resultado de cada projeto onde você vai poder seguir um tutorial e no final dele gerar uma aplicação rodando no docker ;)
 
 # Events
 

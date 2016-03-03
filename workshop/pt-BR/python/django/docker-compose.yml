@@ -1,0 +1,7 @@
+django:
+    image: django
+    ports:
+        - "8000:8000"
+    volumes:
+        - ./eventex-entrypoint.sh:/usr/src/entrypoint
+    entrypoint: /usr/local/bin/entrypoint

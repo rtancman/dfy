@@ -44,16 +44,41 @@ Agora que já entendemos como levantar o nosso projeto de teste, precisamos real
   FROM django
 ```
 
+- Vamos incluir o script de entrypoint, workdir e vamos expor a porta 8000 para testes
+```Dockerfile
+  FROM django
+  
+  RUN touch /usr/local/bin/eventex-entrypoint
+  RUN chmod +x /usr/local/bin/eventex-entrypoint
+  
+  WORKDIR /var/www/html
+  
+  EXPOSE 8000
+  ENTRYPOINT ["/usr/local/bin/eventex-entrypoint"]
+```
+
+- Agora vamos buildar a nossa imagem de teste
+```bash
+$ docker build -t django-docker .
+```
+
+- Agora que já temos uma imagem padrao para trabalhar vamos iniciar um projeto na pasta app
+```bash
+$ docker build -t django-docker .
+```
+- Já temos a nossa imagem, precisamos ter o codigo fonte de um projeto em django. Na pasta app já tem um projeto simples para agente validar.
+**OBS:** Se vc tiver um projetinho seu em django basta incluir no diretorio app. Vale lembra que apos instalar 
+
 - Agora vamos criar o nosso docker-compose.yml
 ```yml
-
 django:
- image: django
- ports:
-  - "8000:8000"
- volumes:
-   - ./eventex-entrypoint.sh:/usr/src/entrypoint
- entrypoint: /usr/local/bin/entrypoint
+    image: django-docker
+    ports:
+        - "8000:8000"
+    volumes:
+        - ./app:/var/www/html
+        - ./eventex-entrypoint:/usr/local/bin/eventex-entrypoint
+    entrypoint: /usr/local/bin/eventex-entrypoint
 ```
 
 

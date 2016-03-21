@@ -1,7 +1,8 @@
 django:
-    image: django
+    image: django-docker
     ports:
         - "8000:8000"
     volumes:
-        - ./eventex-entrypoint.sh:/usr/src/entrypoint
-    entrypoint: /usr/local/bin/entrypoint
+        - ./app:/var/www/html
+        - ./eventex-entrypoint:/usr/local/bin/eventex-entrypoint
+    entrypoint: /usr/local/bin/eventex-entrypoint

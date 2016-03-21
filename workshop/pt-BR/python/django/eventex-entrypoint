@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+# pip install --no-cache-dir -r requirements.txt
+
+# django-admin startproject teste .
+# cd teste
+
+# python manage.py startapp core
+
+# cd ..
+
+exec python manage.py runserver 0.0.0.0:8000

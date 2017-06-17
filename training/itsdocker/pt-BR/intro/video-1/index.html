@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Docker - devs e sysadmins juntos distribuindo apps ;)</title>
+        <link rel="stylesheet" href="/talk-revealjs/css/reveal.css">
+        <link rel="stylesheet" href="/talk-revealjs/css/theme/white.css" id="theme">
+        <link rel="stylesheet" href="/talk-revealjs/lib/css/zenburn.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+                <section data-markdown="/slide1.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+                <section data-markdown="/slide2.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+                <section data-markdown="/slide3.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+                <section data-markdown="/slidelast.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+            </div>
+        </div>
+        <script src="/talk-revealjs/lib/js/head.min.js"></script>
+        <script src="/talk-revealjs/js/reveal.js"></script>
+        <script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '/talk-revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '/talk-revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '/talk-revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '/talk-revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '/talk-revealjs/plugin/notes/notes.js' }
+                ]
+            });
+        </script>
+    </body>
+</html>

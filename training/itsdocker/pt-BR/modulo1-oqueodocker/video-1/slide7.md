@@ -1,3 +1,1 @@
-![Docker](/images/what_is_layered_filesystems_sm.png)
-
-Representação do que é o modelo de camadas do docker
+![matrix hell solved](images/docker-matrixhell-solved.jpg)

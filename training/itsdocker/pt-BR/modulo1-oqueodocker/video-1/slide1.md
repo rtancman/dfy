@@ -1,4 +1,4 @@
 ![Docker](images/dockerlogo.png)
-### É Docker cara!
+### 1. O que é o docker?
 
-_ 1. O que é o docker? _
+_ Entenda o caso _
